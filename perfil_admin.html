@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Entrenador</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/perfil_admin.css">
+    <link rel="stylesheet" href="css/crud_entrenadores.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!--Menu en foto-->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom" style="background-color: rgba(32, 29, 29, 0.797);"> 
+                <a class="navbar-brand" id="nom" style="color:#64DBFF; font-family:monospace; font-style: oblique; font-size: 2em; font-weight: bold;">
+                    <img src="img/logo.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+                    FITFUSION
+                </a>
+                <button class="btn" id="sidebar-toggle" type="button">    
+                </button>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <a href="#" class="theme-toggle" title="Cambiar Tema">
+                            <i class="fa-regular fa-moon"></i>
+                            <i class="fa-regular fa-sun"></i>
+                        </a>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-primary" style="margin-right: 15px;"><i class="bi bi-bell-fill"></i><span class="badge text-bg-secondary">4</span>
+                            </button>
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="img/and1.jpg" class="avatar img-fluid rounded" alt="" style="margin-left: 10px;">
+                                <i class="bi bi-grip-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Editar Perfil</a>
+                                <a href="#" class="dropdown-item">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                    </div>
+        <!-- Contenido principal -->
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex" style="margin-bottom: 40px;">
+                            <div class="card flex-fill border-0 illustration">
+                                <div class="card-body p-0 d-flex flex-fill">
+                                    <div class="row g-0 w-100">
+                                        <div class="col-6">
+                                            <div class="p-3 m-1">
+                                                <h4>Bienvenido Administrador/a</h4>
+                                                <p class="mb-0">Alejandra</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 align-self-end text-end">
+                                            <img src="img/and1.jpg" class="img-fluid illustration-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex" style="margin-top: 50px; margin-bottom: 40px;">
+                            <div class="card flex-fill border-0">
+                                <div class="card-body py-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h4 class="mb-2">
+                                                Clientes
+                                            </h4>
+                                            <p class="mb-2">
+                                                3500 clientes existentes
+                                            </p>
+                                            <button class="btn btn-primary visClie" data-bs-toggle="modal" data-bs-target="#visClie" style="margin-bottom: 20px;">Visualizar  <i class="bi bi-eye-fill"></i></button>
+                                        </div>
+                                        <div class="col-6 align-self-end text-end">
+                                            <img src="img/clientes.png" class="img-fluid illustration-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Elementos de la tabla -->
+                    <div class="card border-0">
+                        <section class="p-3">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="input-group search-group">
+                                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                    <input type="search" class="form-control" placeholder="Search Data...">
+                                </div>
+                                <button class="btn btn-primary newUser" data-bs-toggle="modal" data-bs-target="#userForm" style="margin-bottom: 20px;">Agregar <i class="bi bi-people"></i></button>
+                            </div>
+                            </div>
+                            <div class="content-2">
+                              <div class="table-responsive">
+                                  <div class="title">
+                                      <h2>Listado de Entrenadores</h2>
+                                  </div>
+                                  <!-----------------------------------------------Tabla de entrenadores------------------------------------------------>
+                                  <table class="table table-hover ">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Foto</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">WhatsApp</th>
+                                        <th scope="col">Operaciones</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td><img src="img/and1.jpg" alt="" width="30" height="30"></td>
+                                        <td>Rosa</td>
+                                        <td>Lopez Olvera</td>
+                                        <td>5526897236</td>
+                                        <td>
+                                          <button class="btn btn-success verEntrenador" data-bs-toggle="modal" data-bs-target="#verEntrenador" title="Ver Perfil"><i class="bi bi-eye"></i></button>
+                                          <button class="btn btn-primary actualizarInfo" data-bs-toggle="modal" data-bs-target="#actualizarInfo" title="Actualizar"><i class="bi bi-pencil-square"></i></button>
+                                          <button class="btn btn-danger" title="Eliminar"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">2</th>
+                                        <td><img src="img/and1.jpg" alt="" width="30" height="30"></td>
+                                        <td>Carlos</td>
+                                        <td>Romero Flores</td>
+                                        <td>5526897236</td>
+                                        <td>
+                                            <button class="btn btn-success verEntrenador" data-bs-toggle="modal" data-bs-target="#verEntrenador" title="Ver Perfil"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-primary actualizarInfo" data-bs-toggle="modal" data-bs-target="#actualizarInfo" title="Actualizar"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="btn btn-danger" data-bs-title="Eliminar"><i class="bi bi-trash"></i></button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">3</th>
+                                        <td><img src="img/and1.jpg" alt="" width="30" height="30"></td>
+                                        <td>Andrea</td>
+                                        <td>Castro Altamirano</td>
+                                        <td>5526897236</td>
+                                        <td>
+                                            <button class="btn btn-success verEntrenador" data-bs-toggle="modal" data-bs-target="#verEntrenador" title="Ver Perfil"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-primary actualizarInfo" data-bs-toggle="modal" data-bs-target="#actualizarInfo" title="Actualizar"><i class="bi bi-pencil-square"></i></button>
+                                                <button class="btn btn-danger" title="Eliminar"><i class="bi bi-trash"></i></button>
+                                          </td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table>
+                              </div>
+                          </section>
+
+                          <nav aria-label="Page navigation example" style="margin-right: 25px;">
+                            <ul class="pagination justify-content-end">
+                              <li class="page-item disabled">
+                                <a class="page-link">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+
+<!--------------------------------------------------Modal Form De Entrenadores----------------------------------------------------------->
+                          <div class="modal fade" id="userForm">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" style="color: white;"><img src="img/logo.png" alt="" width="40" height="30">  | Formulario Entrenador</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" id="myForm">
+                                            <div class="card imgholder">
+                                                <label for="imgInput" class="upload">
+                                                    <input type="file" name="" id="imgInput">
+                                                    <i class="bi bi-plus-circle-dotted"><h5>Foto</h5></i>
+                                                </label>
+                                                <img src="img/usuario.png" alt="" width="200" height="200" class="imgpñ">
+                                            </div>
+                                            <!-----------------------------------------Primer desplegable------------------------------------------------>
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="myForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-person-fill"></i> | Datos Personales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="name">Nombre</label>
+                                                                        <input type="text" class="form-control" id="name" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="apellido">Apellido</label>
+                                                                        <input type="text" class="form-control" id="apellido" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="email">Correo Asignado</label>
+                                                                        <input type="email" class="form-control" id="email" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefono">Teléfono</label>
+                                                                        <input type="text" class="form-control" id="telefono" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="pass">Contraseña Asignada</label>
+                                                                        <input type="password" class="form-control" id="pass" required minlength="8">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---------------------------------------Segundo desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="myForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-card-heading"></i> | Detalles Generales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="numero">N° Empleado Asignado</label>
+                                                                        <input type="text" class="form-control" id="numero" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="fecha">Fecha de Nacimiento</label>
+                                                                        <input type="date" class="form-control" id="fecha">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="genero">Género</label>
+                                                                        <input type="text" class="form-control" id="genero" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="curp">CURP</label>
+                                                                        <input type="text" class="form-control" id="curp" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="rfc">RFC</label>
+                                                                        <input type="text" class="form-control" id="rfc" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="certificados">Certificados</label>
+                                                                        <input type="text" class="form-control" id="certificados" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="experiencia">Experiencia</label>
+                                                                        <textarea class="form-control" aria-label="With textarea" required></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Tercer desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="myForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-house-door"></i> | Detalles de Domicilio</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="calle">Calle</label>
+                                                                        <input type="text" class="form-control" id="calle" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="numero">Número</label>
+                                                                        <input type="text" class="form-control" id="numero" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="colonia">Colonia</label>
+                                                                        <input type="text" class="form-control" id="colonia" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="municipio">Municipio</label>
+                                                                        <input type="text" class="form-control" id="municipio" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="estado">Estado</label>
+                                                                        <input type="text" class="form-control" id="estado" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="cp">Código Postal</label>
+                                                                        <input type="text" class="form-control" id="cp" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Cuarto desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="myForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-file-earmark-person"></i> | Detalles Laborales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="sueldo">Sueldo</label>
+                                                                        <input type="text" class="form-control" id="sueldo" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="fechaing">Fecha de Ingreso</label>
+                                                                        <input type="date" class="form-control" id="fechaing" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="nss">NSS</label>
+                                                                        <input type="text" class="form-control" id="nss" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="clinica">Clínica</label>
+                                                                        <input type="text" class="form-control" id="clinica" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Quinto desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="myForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-person-circle"></i> | Detalles de Contacto</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefon">Teléfono</label>
+                                                                        <input type="text" class="form-control" id="telefon" required minlength="10" maxlength="12">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefon2">Teléfono 2</label>
+                                                                        <input type="text" class="form-control" id="telefon2" required minlength="10" maxlength="12">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="correalt">Correo Personal</label>
+                                                                        <input type="text" class="form-control" id="correalt"required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefonoem">Teléfono de Emergencia</label>
+                                                                        <input type="text" class="form-control" id="telefonoem" required minlength="10" maxlength="12">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="nombrecont">Nombre del Contacto</label>
+                                                                        <input type="text" class="form-control" id="nombrecont" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="parentesco">Parentesco</label>
+                                                                        <input type="text" class="form-control" id="parentesco" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Sexto desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="myForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-file-earmark-person"></i> | Detalles de Contratación</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="date">Fecha de Contratación</label>
+                                                                        <input type="text" class="form-control" id="date" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="duracion">Duración de Contratación</label>
+                                                                        <input type="text" class="form-control" id="duracion" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="observacion">Observaciones</label>
+                                                                        <input type="text" class="form-control" id="observacion" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+<!-----------------------------------------------------------------------Actualizar información Entrenadores---------------------------------------------------------------------------------->
+                          <div class="modal fade" id="actualizarInfo" tabindex="-1" aria-labelledby="actualizarInfoLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" style="color: white;"><img src="img/logo.png" alt="" width="40" height="30">  | Actualizar Datos Entrenador</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" id="actualizarInfo">
+                        
+                                            <!-----------------------------------------Primer desplegable------------------------------------------------>
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="actualizarInfo">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-person-fill"></i> | Datos Personales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="name">Nombre</label>
+                                                                        <input type="text" class="form-control" id="name" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="apellido">Apellido</label>
+                                                                        <input type="text" class="form-control" id="apellido" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="email">Correo Asignado</label>
+                                                                        <input type="email" class="form-control" id="email" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefono">Teléfono</label>
+                                                                        <input type="text" class="form-control" id="telefono" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="pass">Contraseña Asignada</label>
+                                                                        <input type="password" class="form-control" id="pass" required minlength="8">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---------------------------------------Segundo plegable------------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="actualizarInfo">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-house-door"></i> | Detalles de Domicilio</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="numero">N° Empleado Asignado</label>
+                                                                        <input type="text" class="form-control" id="numero" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="fecha">Fecha de Nacimiento</label>
+                                                                        <input type="date" class="form-control" id="fecha">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="genero">Género</label>
+                                                                        <input type="text" class="form-control" id="genero" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="curp">CURP</label>
+                                                                        <input type="text" class="form-control" id="curp" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="rfc">RFC</label>
+                                                                        <input type="text" class="form-control" id="rfc" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="certificados">Certificados</label>
+                                                                        <input type="text" class="form-control" id="certificados" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="experiencia">Experiencia</label>
+                                                                        <textarea class="form-control" aria-label="With textarea" required></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary" >Actualizar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+
+<!-------------------------------------------------------------------------------------Ver entrenador-------------------------------------------------------------------------------------------------------------->
+                          <div class="modal fade" id="verEntrenador">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" style="color: white;"><img src="img/logo.png" alt="" width="40" height="30">  | Perfil Entrenador</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" id="verEntrenador">
+                                            <div class="card imgholder">
+                                                <img src="img/usuario.png" alt="" width="200" height="200" class="imgpñ"> <!--Foto del usuario-->
+                                            </div>
+                                            <!-----------------------------------------Primer desplegable------------------------------------------------>
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="verEntrenador">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-person-fill"></i> | Datos Personales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="name">Nombre</label>
+                                                                        <input type="text" class="form-control" id="name"  readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="apellido">Apellido</label>
+                                                                        <input type="text" class="form-control" id="apellido" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="email">Correo Asignado</label>
+                                                                        <input type="email" class="form-control" id="email"readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefono">Teléfono</label>
+                                                                        <input type="text" class="form-control" id="telefono" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="pass">Contraseña Asignada</label>
+                                                                        <input type="password" class="form-control" id="pass" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---------------------------------------Segundo desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="verEntrenador">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-card-heading"></i> | Detalles Generales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="numero">N° Empleado</label>
+                                                                        <input type="text" class="form-control" id="numero" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="fecha">Fecha de Nacimiento</label>
+                                                                        <input type="date" class="form-control" id="fecha" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="genero">Género</label>
+                                                                        <input type="text" class="form-control" id="genero" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="curp">CURP</label>
+                                                                        <input type="text" class="form-control" id="curp" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="rfc">RFC</label>
+                                                                        <input type="text" class="form-control" id="rfc" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="certificados">Certificados</label>
+                                                                        <input type="text" class="form-control" id="certificados"readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="experiencia">Experiencia</label>
+                                                                        <textarea class="form-control" aria-label="With textarea" readonly></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Tercer desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="verEntrenador">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-house-door"></i> | Detalles de Domicilio</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="sueldo">Sueldo</label>
+                                                                        <input type="text" class="form-control" id="sueldo" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="fechaing">Fecha de Ingreso</label>
+                                                                        <input type="date" class="form-control" id="fechaing" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="nss">NSS</label>
+                                                                        <input type="text" class="form-control" id="nss" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="clinica">Clínica</label>
+                                                                        <input type="text" class="form-control" id="clinica" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Cuarto desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="verEntrenador">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-file-earmark-person"></i> | Detalles Laborales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="sueldo">Sueldo</label>
+                                                                        <input type="number" class="form-control" id="sueldo" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="fechaing">Fecha de Ingreso</label>
+                                                                        <input type="date" class="form-control" id="fechaing" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="nss">NSS</label>
+                                                                        <input type="text" class="form-control" id="nss" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="clinica">Clínica</label>
+                                                                        <input type="text" class="form-control" id="clinica" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Quinto desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="verEntrenador">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-person-circle"></i> | Detalles de Contacto</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefon">Teléfono</label>
+                                                                        <input type="text" class="form-control" id="telefon" readonly minlength="10" maxlength="12">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefon2">Teléfono 2</label>
+                                                                        <input type="text" class="form-control" id="telefon2" readonly minlength="10" maxlength="12">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="correalt">Correo Personal</label>
+                                                                        <input type="text" class="form-control" id="correalt" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefonoem">Teléfono de Emergencia</label>
+                                                                        <input type="text" class="form-control" id="telefonoem" readonly minlength="10" maxlength="12">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="nombrecont">Nombre del Contacto</label>
+                                                                        <input type="text" class="form-control" id="nombrecont" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="parentesco">Parentesco</label>
+                                                                        <input type="text" class="form-control" id="parentesco" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Sexto desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="verEntrenador">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-file-earmark-person"></i> | Detalles de Contratación</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="date">Fecha de Contratación</label>
+                                                                        <input type="date" class="form-control" id="date" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="duracion">Duración de Contratación</label>
+                                                                        <input type="text" class="form-control" id="duracion" readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="observacion">Observaciones</label>
+                                                                        <input type="text" class="form-control" id="observacion" readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+
+
+
+                          <div class="modal-dialog modal-xl">...</div>
+
+
+                    
+                    </div>
+                </div>
+
+            </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>FitFusion | Creado por Innova Bytes (2024) &#169;</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terminos y Condiciones</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Politicas de privacidad</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <script src="js/perfil_admin.js"></script>
+    
+</body>
+</html>
+

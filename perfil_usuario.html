@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/perfil_admin.css">
+    <link rel="stylesheet" href="css/crud_entrenadores.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!--Menu en foto-->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom" style="background-color: rgba(32, 29, 29, 0.797);"> 
+                <a class="navbar-brand" id="nom" style="color:#64DBFF; font-family:monospace; font-style: oblique; font-size: 2em; font-weight: bold;">
+                    <img src="img/logo.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+                    FITFUSION
+                </a>
+                <button class="btn" id="sidebar-toggle" type="button">    
+                </button>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <a href="#" class="theme-toggle" title="Cambiar Tema">
+                            <i class="fa-regular fa-moon"></i>
+                            <i class="fa-regular fa-sun"></i>
+                        </a>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-primary" style="margin-right: 15px;"><i class="bi bi-bell-fill"></i><span class="badge text-bg-secondary">4</span>
+                            </button>
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="img/usuario.png" class="avatar img-fluid rounded" alt="" style="margin-left: 10px;">
+                                <i class="bi bi-grip-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#compForm">Editar Perfil</a>
+                                <a href="#" class="dropdown-item">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                    </div>
+        <!-- Contenido principal -->
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex" style="margin-bottom: 40px;">
+                            <div class="card flex-fill border-0 illustration">
+                                <div class="card-body p-0 d-flex flex-fill">
+                                    <div class="row g-0 w-100">
+                                        <div class="col-6">
+                                            <div class="p-3 m-1">
+                                                <h3>Bienvenid@ | A un paso de tu mejor versión</h3>
+                                                <h2 class="mb-0">Alejandra</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 align-self-end text-end">
+                                            <img src="img/usuario.png" class="img-fluid illustration-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex" style="margin-top: 50px; margin-bottom: 40px;">
+                            <div class="card flex-fill border-0">
+                                <div class="card-body py-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h4 class="mb-2">
+                                                Entrenadores
+                                            </h4>
+                                            <p class="mb-2">
+                                                Para seleccionar un entrenador da clic en el boton <i class="bi bi-arrow-down"></i>
+                                            </p>
+                                            <a href="index.html"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#visEntre" style="margin-bottom: 20px;">Visualizar  <i class="bi bi-eye-fill"></i></button></a>
+                                        </div>
+                                        <div class="col-6 align-self-end text-end">
+                                            <img src="img/clientes.png" class="img-fluid illustration-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex" style="margin-top: 20px; margin-bottom: 40px;">
+                            <div class="card flex-fill border-0">
+                                <div class="card-body py-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h4 class="mb-2">
+                                                Completa tu información
+                                            </h4>
+                                            <p class="mb-2">
+                                                Completar tu información nos ayudara a personalizar tu rutina según corresponda tu objetivo <i class="bi bi-arrow-down"></i>
+                                            </p>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#compForm" style="margin-bottom: 20px;">Formulario <i class="bi bi-clipboard2-data-fill"></i></button>
+                                        </div>
+                                        <div class="col-6 align-self-end text-end">
+                                            <img src="img/completar.png" class="img-fluid illustration-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex" style="margin-top: 50px; margin-bottom: 40px;">
+                            <div class="card flex-fill border-0">
+                                <div class="card-body py-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h4 class="mb-2">
+                                                Más opciones
+                                            </h4>
+                                            <p class="mb-2">
+                                                Aquí podras revisar un reporte mensual sobre tus avances y llevar un control de las actividades diarias.
+                                            </p>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#visReportes" style="margin-bottom: 20px; margin-right: 20px;">Visualizar Reportes <i class="bi bi-eye-fill"></i></button>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#regisAct" style="margin-bottom: 20px;" >Registrar Actividades <i class="bi bi-file-earmark-text-fill"></i></button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- Elementos de la tabla -->
+                    <div class="card border-0"> 
+<!--------------------------------------------------Modal Form De Entrenadores----------------------------------------------------------->
+                          <div class="modal fade" id="compForm">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" style="color: white;"><img src="img/logo.png" alt="" width="40" height="30">  | Formulario Entrenador</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" id="compForm">
+                                            <div class="card imgholder">
+                                                <label for="imgInput" class="upload">
+                                                    <input type="file" name="" id="imgInput">
+                                                    <i class="bi bi-plus-circle-dotted"><h5>Foto</h5></i>
+                                                </label>
+                                                <img src="img/usuario.png" alt="" width="200" height="200" class="imgpñ">
+                                            </div>
+                                            <!-----------------------------------------Primer desplegable------------------------------------------------>
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="compForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-person-fill"></i> | Datos Personales</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="name">Nombre</label>
+                                                                        <input type="text" class="form-control" id="name">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="apellido">Apellidos</label>
+                                                                        <input type="text" class="form-control" id="apellido">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="edad">Edad</label>
+                                                                        <input type="number" class="form-control" id="edad">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="sexo">Sexo</label>
+                                                                        <input type="text" class="form-control" id="sexo">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="telefono">Teléfono</label>
+                                                                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="objetivo" class="form-label">Objetivos</label>
+                                                                        <textarea class="form-control" id="objetivo" rows="3" required></textarea>
+                                                                    </div>
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---------------------------------------Segundo desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="compForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-card-heading"></i> | Detalles Medicoss</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="estatura">Estatura</label>
+                                                                        <input type="text" class="form-control" id="estatura">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="peso">Peso</label>
+                                                                        <input type="text" class="form-control" id="peso">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <div class="mb-3">
+                                                                            <label for="intensidadRutina" class="form-label">Enfermedades Cronicas</label>
+                                                                            <select class="form-select" id="intensidadRutina" required>
+                                                                                <option value="">Seleccionar</option>
+                                                                                <option value="baja">Baja</option>
+                                                                                <option value="media">Media</option>
+                                                                                <option value="alta">Alta</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <div class="mb-3">
+                                                                            <label for="intensidadRutina" class="form-label">Lesiones Anteriores</label>
+                                                                            <select class="form-select" id="intensidadRutina" required>
+                                                                                <option value="">Seleccionar</option>
+                                                                                <option value="baja">Baja</option>
+                                                                                <option value="media">Media</option>
+                                                                                <option value="alta">Alta</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <h3>Circunferencia de:</h3>
+                                                                <hr>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="cadera">Cadera</label>
+                                                                        <input type="text" class="form-control" id="cadera">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="cintura">Cintura</label>
+                                                                        <input type="text" class="form-control" id="cintura">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="muslo">Muslos</label>
+                                                                        <input type="text" class="form-control" id="muslo">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="pecho">Pecho</label>
+                                                                        <input type="text" class="form-control" id="pecho">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="brazos">Brazos</label>
+                                                                        <input type="text" class="form-control" id="brazos">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="panto">Pantorrillas</label>
+                                                                        <input type="text" class="form-control" id="panto">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="hombro">Hombros</label>
+                                                                        <input type="text" class="form-control" id="hombro">
+                                                                    </div>
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------------------------------------Tercer desplegable----------------------------------------------->
+                                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                <div class="accordion-item" style="background-color: rgba(255, 255, 255, 0.804); box-shadow: 5px 5px 15px rgba(255, 210, 147, 0.916);">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                            <div class="modal-body">
+                                                                <form action="#" id="compForm">
+                                                                    <div class="inputField">
+                                                                        <h5><i class="bi bi-house-door"></i> | Estilo de vida</h5>
+                                                                    </div>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <div class="mb-3">
+                                                                            <label for="intensidadRutina" class="form-label">Nivel de actividad fisica actual</label>
+                                                                            <select class="form-select" id="intensidadRutina" required>
+                                                                                <option value="">Seleccionar</option>
+                                                                                <option value="baja">Baja</option>
+                                                                                <option value="media">Media</option>
+                                                                                <option value="alta">Alta</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <div class="mb-3">
+                                                                            <label for="intensidadRutina" class="form-label">Calidad del sueño</label>
+                                                                            <select class="form-select" id="intensidadRutina" required>
+                                                                                <option value="">Seleccionar</option>
+                                                                                <option value="baja">Baja</option>
+                                                                                <option value="media">Media</option>
+                                                                                <option value="alta">Alta</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="tabaco">Consumo de tabaco</label>
+                                                                        <input type="text" class="form-control" id="tabaco">
+                                                                    </div>
+                                                                </div> 
+                                                                <div class="col-4">
+                                                                    <div class="inputField">
+                                                                        <label for="alcohol">Consumo de alcohol</label>
+                                                                        <input type="text" class="form-control" id="alcohol">
+                                                                    </div>
+                                                                </div> 
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+<!----------------------------------------------------------------------------------Termina Modal Form Entrenadores----------------------------------------------------->
+                          
+                    </div>
+            </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>FitFusion | Creado por Innova Bytes (2024) &#169;</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terminos y Condiciones</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Politicas de privacidad</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <script src="js/perfil_admin.js"></script>
+    
+</body>
+</html>
+<script>
+    // Inicializa todos los tooltips en la página
+document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+});
+</script>

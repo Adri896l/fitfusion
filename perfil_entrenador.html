@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Entrenador</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/perfil_admin.css">
+    <link rel="stylesheet" href="css/crud_entrenadores.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!--Menu en foto-->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom" style="background-color: rgba(32, 29, 29, 0.797);"> 
+                <a class="navbar-brand" id="nom" style="color:#64DBFF; font-family:monospace; font-style: oblique; font-size: 2em; font-weight: bold;">
+                    <img src="img/logo.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+                    FITFUSION
+                </a>
+                <button class="btn" id="sidebar-toggle" type="button">    
+                </button>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <a href="#" class="theme-toggle" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Cambiar Tema">
+                            <i class="fa-regular fa-moon"></i>
+                            <i class="fa-regular fa-sun"></i>
+                        </a>
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-primary" style="margin-right: 15px;"><i class="bi bi-bell-fill"></i><span class="badge text-bg-secondary">4</span>
+                            </button>
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="img/and1.jpg" class="avatar img-fluid rounded" alt="" style="margin-left: 10px;">
+                                <i class="bi bi-grip-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Editar Perfil</a>
+                                <a href="#" class="dropdown-item">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                    </div>
+        <!-- Contenido principal -->
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex" style="margin-bottom: 40px;">
+                            <div class="card flex-fill border-0 illustration">
+                                <div class="card-body p-0 d-flex flex-fill">
+                                    <div class="row g-0 w-100">
+                                        <div class="col-6">
+                                            <div class="p-3 m-1">
+                                                <h4>Bienvenido Entrenador/a</h4>
+                                                <p class="mb-0">Alejandra</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 align-self-end text-end">
+                                            <img src="img/and1.jpg" class="img-fluid illustration-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex" style="margin-top: 50px; margin-bottom: 40px;">
+                            <div class="card flex-fill border-0">
+                                <div class="card-body py-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h3 id="dynamicHeader">......................</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Elementos de la tabla -->
+                    <div class="card border-0">
+                        <section class="p-3">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="input-group search-group">
+                                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                    <input type="search" class="form-control" placeholder="Search Data...">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="content-2">
+                              <div class="table-responsive">
+                                  <div class="title">
+                                      <h2>Listado de Clientes</h2>
+                                  </div>
+                                  <table class="table table-hover ">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Foto</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">WhatsApp</th>
+                                        <th scope="col">Operaciones</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td><img src="img/and1.jpg" alt="" width="30" height="30"></td>
+                                        <td>Rosa</td>
+                                        <td>Lopez Olvera</td>
+                                        <td>5526897236</td>
+                                        <td>
+                                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#visualizarPerfilModal" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Visualizar"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guardarRutinaModal" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Asignar Rutina"><i class="bi bi-person-arms-up"></i></button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">2</th>
+                                        <td><img src="img/and1.jpg" alt="" width="30" height="30"></td>
+                                        <td>Carlos</td>
+                                        <td>Romero Flores</td>
+                                        <td>5526897236</td>
+                                        <td>
+                                            <button class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Visualizar"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guardarRutinaModal" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Asignar Rutina"><i class="bi bi-person-arms-up"></i></button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">3</th>
+                                        <td><img src="img/and1.jpg" alt="" width="30" height="30"></td>
+                                        <td>Andrea</td>
+                                        <td>Castro Altamirano</td>
+                                        <td>5526897236</td>
+                                        <td>
+                                            <button class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Visualizar"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guardarRutinaModal" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Asignar Rutina"><i class="bi bi-person-arms-up"></i></button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                              </div>
+                          </section>
+
+                          <nav aria-label="Page navigation example" style="margin-right: 25px;">
+                            <ul class="pagination justify-content-end">
+                              <li class="page-item disabled">
+                                <a class="page-link">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+
+
+                    </div>
+            </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>FitFusion | Creado por Innova Bytes (2024) &#169;</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terms</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Booking</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/perfil_admin.js"></script>
+    
+</body>
+</html>
